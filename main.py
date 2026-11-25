@@ -23,6 +23,8 @@ def validate_line(line: str) -> None:
     # so any accidental wording change fails loudly instead of silently
     # shipping a different (or over-long) entry.
     assert len(line) == 100, f"line is {len(line)} characters, expected 100"
+    assert "Future Me" in line, "line must keep its Future Me premise"
+    assert line.endswith("I am."), "line must end on the self-owning punchline"
     assert "\n" not in line, "line must be a single line"
     assert "\r" not in line, "line must be a single line"
     assert 1 <= len(line) <= 200, f"line is {len(line)} characters"
